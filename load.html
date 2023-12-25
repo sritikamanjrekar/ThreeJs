@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script type="module" src="app.js"></script> -->
+    <title>Document</title>
+</head>
+<body>
+    <script type="module" >//import * as THREE from 'three'
+
+        //import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+        
+        // const THREE = require('three');
+        // const GLTFLoader=require('three/addons/loaders/GLTFLoader.js');
+        
+        import * as THREE from 'https://cdn.skypack.dev/three@0.129.0/build/three.module.js';
+        import { OrbitControls } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js';
+        import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
+       
+        const scene = new THREE.Scene();
+
+        const loader = new GLTFLoader();
+        
+        loader.load( 'clouds.glb', function ( gltf ) {
+        
+            scene.add( gltf.scene );
+        
+        }, undefined, function ( error ) {
+        
+            console.error( error );
+        
+        } );</script>
+</body>
+</html>
